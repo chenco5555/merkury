@@ -1,0 +1,77 @@
+<div class="home-page">
+  <h1>
+    Hello {{user.name}}!
+  </h1>
+  <div>
+    <div class="flex-container charts-img-container">
+      <img class="your-sales-charts"
+           src="../../../assets/images/sales.png"
+           alt="charts">
+      <img class="report-charts"
+           src="../../../assets/images/report.png"
+           alt="charts">
+    </div>
+
+    <div class="flex-container all-project-managing">
+
+      <ul class="flex-container tasks-managing managing-box">
+        <li class="managing-header-box">
+          <span class="project-managing-header">Tasks</span>
+          <div class="circle-counter">{{tasks.length}}</div>
+          <div class="circle-counter delays-tasks">{{numberOfDelaysTasks}}</div>
+        </li>
+        <li class="flex-container" *ngFor="let item of tasks |slice: 0:4">
+          <div class="circle-counter">{{item.header|firstLetter}}</div>
+          <div class="content-managing-text">
+            <div class="content-managing-header">{{item.header}}</div>
+            <div class="content-managing-date" [class.color-date-red]=item.isDelays><i class="far fa-clock"></i>{{item.date}}
+            </div>
+          </div>
+          <div class="three-dots"><i class="fas fa-ellipsis-v"></i></div>
+        </li>
+      </ul>
+
+
+      <ul class="flex-container managing-box messages-managing">
+        <li class="managing-header-box">
+          <span class="project-managing-header">Messages</span>
+          <div class="circle-counter">{{numberOfNewMessages}}</div>
+        </li>
+        <li class="flex-container " [class.new-messages]=item.is_new *ngFor="let item of messages |slice: 0 :4">
+           <img class="img-managing" [src]=item.img alt="User image">
+          <div class="content-managing-text">
+          <div class="content-managing-header message-item-font">
+            {{item.name}}<span class="content-managing-date messages-date">{{item.date}}</span>
+          </div>
+            <div class="message-item-font">{{item.post}}</div>
+           <div class="message-bottom-icon-box">
+             <img src="../../../assets/images/back.png" class="message-bottom-icon">
+             <i class="fas fa-cog message-bottom-icon"></i>
+           </div>
+            </div>
+        </li>
+      </ul>
+
+      <ul class="activity-managing flex-container managing-box">
+        <li class="managing-header-box">
+          <span class="project-managing-header">Activity</span>
+          <div class="circle-counter">{{activities.length}}</div>
+        </li>
+        <li class="flex-container activity-li" *ngFor="let item of activities |slice:0 :4">
+          <img class="img-managing" [src]=item.img>
+          <div class="content-managing-text">
+            <div class="content-managing-header">{{item.userName}}<span class="font-normal">{{' '+item.type}}</span><span>{{' '+item.projectName}}</span></div>
+            <div class="content-managing-date"><i class="far fa-clock"></i>{{item.date}}
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+

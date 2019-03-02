@@ -1,0 +1,311 @@
+//variables
+$side-menu-background-color: #0E1A35;
+$white: #FFFFFF;
+$icons-color: #3D63C0;
+$side-menu-background-color-hover: #25396E;
+$light-gray: #E6E9EF;
+$site-background-color: #F6F7FA;
+$grey: grey;
+$blue: #5584FF;
+$pink: #F84481;
+
+html {
+  font-family: arial, sans-serif;
+  background-color: $site-background-color;
+  body{
+    margin: 0;
+  }
+}
+
+.container-main-page {
+  display: flex;
+  flex-direction: row;
+}
+
+.site-header-and-home-page{
+  width: 100%;
+}
+
+.site-header {
+
+  .site-header-tool-line {
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $light-gray;
+    padding: 10px 40px;
+
+    .site-header-hamburger {
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    .site-header-spacing {
+      margin: 20px;
+      flex-grow: 3;
+    }
+
+    .add-project {
+      background: $blue;
+      color: $white;
+      border-radius: 50px;
+      border: 1px solid $grey;
+      font-size: 14px;
+      width: 120px;
+      height: 30px;
+      margin-right: 20px;
+    }
+
+    .envelope-icon, .bell-icon {
+      width: 35px;
+    }
+
+    .user-img {
+      width: 35px;
+      height: 35px;
+    }
+
+  }
+
+  .user-img {
+    border-radius: 50%;
+  }
+}
+
+.display-menu {
+  display: none;
+}
+
+aside {
+  font-weight:bold;
+  background-color: $side-menu-background-color;
+  color: $white;
+
+  ul {
+    padding-left: 0;
+    width: 300px;
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+
+    li {
+      padding: 20px;
+      border-left: 6px solid $side-menu-background-color;
+
+      a {
+        text-decoration: none;
+        padding-top: 50px;
+        font-size: 18px;
+        color: $white;;
+        width: 100%;
+      }
+
+      i {
+        padding-right: 20px;
+      }
+
+    }
+
+    li:hover, li:active {
+      background-color: $side-menu-background-color-hover;
+      border-left: 6px solid $blue;
+    }
+
+  }
+
+  .menu-header {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    .logo-header{
+      padding-top: 20px;
+      padding-left: 20px;
+    }
+
+
+    img {
+      height: 30px;
+      padding-left: 25px;
+      vertical-align: bottom;
+    }
+
+  }
+
+
+  .flex-container {
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    i {
+      color: $icons-color;
+    }
+  }
+}
+
+.home-page {
+
+  padding-left: 40px;
+  padding-right: 40px;
+
+  .your-sales-charts{
+    width: 40%;
+
+  }
+
+  .report-charts{
+    width: 60%;
+  }
+
+  .report-charts,.all-project-managing {
+    //padding-right: 80px;
+  }
+
+  h1 {
+    margin-top: 50px;
+  }
+
+  .charts-img-container, .all-project-managing {
+    display: flex;
+    width: 100%;
+
+    .your-sales-charts {
+      margin-right: 40px;
+    }
+
+    .managing-box {
+      flex-direction: column;
+      width: 33%;
+      list-style: none;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      li {
+        background-color: $white;
+        border: 1px solid $light-gray;
+        display: flex;
+        height: 90px;
+        align-items: center;
+
+        .circle-counter{
+          border-radius: 50%;
+          -moz-border-radius: 50%;
+          -webkit-border-radius: 50%;
+          background-color: $blue;
+          color: $white;
+          display: inline-block;
+          font-weight: bold;
+          line-height: 35px;
+          margin-right: 10px;
+          margin-left: 15px;
+          text-align: center;
+          width: 35px;
+        }
+
+        .delays-tasks{
+          background-color: $pink;
+        }
+
+        .img-managing {
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          padding: 15px;
+        }
+
+        .content-managing-text {
+          flex-grow: 5;
+
+          .content-managing-header {
+            font-size: 14px;
+            font-weight: bold;
+
+          }
+          .content-managing-date {
+            color: grey;
+            font-size: 10px;
+            padding-top: 8px;
+
+            i {
+              padding-right: 5px;
+            }
+          }
+
+          .color-date-red {
+            color: red;
+          }
+
+          .messages-date {
+            padding-left: 10px;
+          }
+        }
+
+
+        .content-managing-date {
+          font-size: 11px;
+          color: $light-gray;
+        }
+
+        .three-dots {
+          width: 30px;
+        }
+
+        .message-bottom-icon {
+          font-size: 10px;
+          margin: 5px;
+          vertical-align: top;
+        }
+
+        .message-item-font {
+          font-size: 13px;
+        }
+
+      }
+
+
+      .new-messages{
+        background-color: $site-background-color;
+      }
+
+      .activity-li{
+        border: none;
+
+        .font-normal{
+          font-weight: 100;
+          color: $grey;
+        }
+
+
+      }
+
+      .managing-header-box {
+        height: 65px;
+
+        .project-managing-header {
+          flex-grow: 5;
+          font-weight: bold;
+          font-size: 22px;
+          padding-left: 20px;
+
+        }
+
+        img {
+          padding-right: 10px;
+          width: 35px;
+        }
+      }
+
+    }
+
+  }
+
+}
+
+
+
+
+
+
+

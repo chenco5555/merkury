@@ -1,0 +1,20 @@
+<div class="container-main-page flex-container">
+  <aside [openMenu]="openMenu"></aside>
+  <div class="site-header-and-home-page">
+    <site-header [user]="user.img"
+                 (insideOpenSideBarMenuButtonClicked)="handleSideBarMenu($event)">
+    </site-header>
+
+    <home-page [activities]="activities"
+               [messages]="messages"
+               [tasks]="tasks"
+               [user]="user">
+    </home-page>
+  </div>
+
+</div>
+
+
+
+
+
